@@ -146,6 +146,6 @@ if [ -e ${SRC_DIR}/Procfile ]; then
 	cp ${SRC_DIR}/Procfile ${BUILD_DIR}
 else
 	cat << EOT >> ${BUILD_DIR}/Procfile
-web: cd \$HOME/heroku_output && dotnet ./${PROJECT_NAME}.dll --server.urls http://+:\$PORT ${CORE_ENVIRONMENT}
+web: cd \$HOME/heroku_output && dotnet ./${PROJECT_NAME}.dll --server.urls=http://+:\$PORT ${CORE_ENVIRONMENT}
 EOT
 fi
